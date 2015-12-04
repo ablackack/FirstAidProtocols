@@ -69,7 +69,7 @@ class NewPat:
 
 		def get_sanis():
 			sanis.clear()
-			with open("sanis.json") as json_data:
+			with open("__sanis.json") as json_data:
 				data = json.load(json_data)
 				json_data.close()
 

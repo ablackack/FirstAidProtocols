@@ -68,5 +68,8 @@ target/
 # Own files that should not be committed
 .idea/
 test
+*.json
+!__template.json
+!__sanis.json
 =======
 >>>>>>> 817a54094ed4f91d87498918839f23a140390a73

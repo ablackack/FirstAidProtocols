@@ -17,12 +17,12 @@ class ManageSan:
 		canvas.create_line(5, 155, 180, 155, fill="grey", tags="line")
 
 		def save_new_sani():
-			with open("sanis.json") as jsond:
+			with open("__sanis.json") as jsond:
 				jdata = json.load(jsond)
 				jsond.close()
 
 			jdata['Sanis'][sanadd_name.get()] = sanadd_class.get()
-			with open("sanis.json", 'w') as f:
+			with open("__sanis.json", 'w') as f:
 				json.dump(jdata, f, sort_keys=True)
 				f.close()
 
@@ -30,7 +30,7 @@ class ManageSan:
 			print("Sanitäter-Datei aktualisiert.")
 
 		def delete_sani():
-			with open("sanis.json") as jsondata:
+			with open("__sanis.json") as jsondata:
 				datajson = json.load(jsondata)
 				jsondata.close()
 
@@ -38,7 +38,7 @@ class ManageSan:
 #				if jkey == san_del.get():
 #					jkey.pop()
 
-			with open("sanis.json", 'w') as g:
+			with open("__sanis.json", 'w') as g:
 				json.dump(datajson, g, sort_keys=True)
 				g.close()
 
@@ -47,7 +47,7 @@ class ManageSan:
 
 		def sanis_show():
 			san_show.delete(1.0, END)
-			with open("sanis.json") as jsond:
+			with open("__sanis.json") as jsond:
 				jdata = json.load(jsond)
 				jsond.close()
 
@@ -56,7 +56,7 @@ class ManageSan:
 			for key in sorted(jdata['Sanis'].keys()):
 				san_show.insert(END, key + "\t\t\t\t\t     "+ jdata['Sanis'][key] + "\n")
 
-		with open("sanis.json") as json_data:
+		with open("__sanis.json") as json_data:
 			data = json.load(json_data)
 			json_data.close()
 
