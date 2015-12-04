@@ -1,0 +1,14 @@
+{
+  "Patient": {
+	"Name": "",
+	"Klasse": "",
+	"Beginn": "",
+	"Ende": ""
+  },
+  "Sanis": {
+	"Sani1": "",
+	"Sani2": "",
+	"Sani3": "",
+	"Sani4": ""
+  }
+}
