@@ -69,6 +69,7 @@ target/
 .idea/
 test
 *.json
+!__users.json
 !__template.json
 !__sanis.json
 =======
