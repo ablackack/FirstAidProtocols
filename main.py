@@ -2,11 +2,16 @@ from tkinter import *
 from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
+from login import Users
 
 root = Tk()
 root.grid()
 root.title = "Schulsanitätsdienst"
 root.wm_title("Schulsanitätsdienst")
+
+# Variable declaration
+
+usr = Users()
 
 # Add buttons to main window
 
@@ -22,5 +27,8 @@ btnew_san.grid(sticky=W+E, pady=1, padx=1)
 btroot_quit = MainQuitButton(root)
 btroot_quit['text'] = "Beenden"
 btroot_quit.grid(sticky=W+E, pady=1, padx=1)
+
+usr._init_()
+usr.create("admin", "test")
 
 root.mainloop()
