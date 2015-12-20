@@ -6,15 +6,30 @@ class Users():
 	def _init_(self):
 		return True
 
-	def hash(self, val):
+	def pwhash(self, val):
 		return hashlib.sha512(val.encode('utf-8')).hexdigest()
+
+	def load_pwhash(self, name):
+		with open("__users.json") as jdata:
+			data = json.load(jdata)
+			jdata.close()
+
+		return data['Users'][name]
 
 	def create(self, name, passwd):
 		with open("__users.json") as jdata:
 			data = json.load(jdata)
 			jdata.close()
 
-		jdata['Users'][name] = str(hash(passwd))
+		data['Users'][name] = self.pwhash(passwd)
 
-	def login(self, name, passwd):
-		passwdhash = hash(passwd)
+		with open("__users.json", 'w') as f:
+			json.dump(data, f, sort_keys=True)
+			f.close()
+
+	def check(self, name, passwd):
+		if self.pwhash(passwd) == self.load_pwhash(name):
+			return True
+		else:
+			return False
+

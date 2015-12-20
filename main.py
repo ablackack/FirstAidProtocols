@@ -29,6 +29,9 @@ btroot_quit['text'] = "Beenden"
 btroot_quit.grid(sticky=W+E, pady=1, padx=1)
 
 usr._init_()
-usr.create("admin", "test")
+if usr.check("admin", "test"):
+	print("Logged in")
+else:
+	print("Wrong user or password")
 
 root.mainloop()
