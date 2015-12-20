@@ -34,9 +34,7 @@ class ManageSan:
 				datajson = json.load(jsondata)
 				jsondata.close()
 
-#			for jkey in datajson['Sanis'].keys():
-#				if jkey == san_del.get():
-#					jkey.pop()
+			del datajson['Sanis'][san_del.get()]
 
 			with open("__sanis.json", 'w') as g:
 				json.dump(datajson, g, sort_keys=True)
