@@ -2,7 +2,7 @@ from tkinter import *
 from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
-from login import Users
+from Users import Users
 
 root = Tk()
 root.grid()
