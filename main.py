@@ -3,6 +3,7 @@ from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
 from Users import Users
+from login import LoginWindow
 
 root = Tk()
 root.grid()
@@ -12,6 +13,8 @@ root.wm_title("Schulsanitätsdienst")
 # Variable declaration
 
 usr = Users()
+lw = LoginWindow()
+lw.__init__()
 
 # Add buttons to main window
 
@@ -28,10 +31,6 @@ btroot_quit = MainQuitButton(root)
 btroot_quit['text'] = "Beenden"
 btroot_quit.grid(sticky=W+E, pady=1, padx=1)
 
-usr._init_()
-if usr.check("admin", "test"):
-	print("Logged in")
-else:
-	print("Wrong user or password")
+lw.create_window()
 
 root.mainloop()
