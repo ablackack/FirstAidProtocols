@@ -69,6 +69,7 @@ target/
 .idea/
 test
 *.json
+login.py
 /windows.txt
 !__users.json
 !__template.json

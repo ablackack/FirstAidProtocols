@@ -13,8 +13,6 @@ root.wm_title("Schulsanitätsdienst")
 # Variable declaration
 
 usr = Users()
-lw = LoginWindow()
-lw.__init__()
 
 # Add buttons to main window
 
@@ -31,6 +29,6 @@ btroot_quit = MainQuitButton(root)
 btroot_quit['text'] = "Beenden"
 btroot_quit.grid(sticky=W+E, pady=1, padx=1)
 
-lw.create_window()
+usr.show_login_window()
 
 root.mainloop()
