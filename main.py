@@ -3,7 +3,6 @@ from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
 from Users import Users
-from login import LoginWindow
 
 root = Tk()
 root.grid()

@@ -36,13 +36,13 @@ class Users():
 			return False
 
 	def show_login_window(self):
-		def login(self):
-			name = self.usrname.get()
-			passwd = self.usrpasswd.get()
+		def login():
+			name = usrname.get()
+			passwd = usrpasswd.get()
 
-			if self.usr.check(name, passwd) and (login_attempts < max_login_attempts):
+			if self.check(name, passwd) and (login_attempts < max_login_attempts):
 				print("User " + name + " logged in successfully")
-				self.lroot.destroy()
+				lroot.destroy()
 			else:
 				print("User " + name + " cannot be logged in: Wrong username/password")
 
@@ -85,4 +85,3 @@ class Users():
 		btquit.grid(pady=1, padx=1, row=2, column=1, sticky="W")
 
 		lroot.mainloop()
-
