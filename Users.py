@@ -2,6 +2,7 @@ import json
 import hashlib
 from tkinter import *
 from QuitButton import QuitButton
+from main import Main
 
 
 class Users():
@@ -43,12 +44,16 @@ class Users():
 			if self.check(name, passwd) and (login_attempts < max_login_attempts):
 				print("User " + name + " logged in successfully")
 				lroot.destroy()
+				main.show_main()
 			else:
 				print("User " + name + " cannot be logged in: Wrong username/password")
 
 		# declaring variables
 		max_login_attempts = 3  # specifies the max amount of login attempts the user can take before getting blocked
 		login_attempts = 1
+
+		main = Main()
+		main.__init__()
 
 		lroot = Tk()
 		lroot.grid()
