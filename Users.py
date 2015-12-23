@@ -17,7 +17,8 @@ class Users():
 			data = json.load(jdata)
 			jdata.close()
 
-		return data['Users'][name]
+		if name in data.keys():
+			return data['Users'][name]
 
 	def create(self, name, passwd):
 		with open("__users.json") as jdata:

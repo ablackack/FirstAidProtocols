@@ -28,6 +28,5 @@ class Main:
 		btroot_quit = MainQuitButton(root)
 		btroot_quit['text'] = "Beenden"
 		btroot_quit.grid(sticky=W+E, pady=1, padx=1)
-		root.quit()
 
 		root.mainloop()
