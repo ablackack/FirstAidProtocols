@@ -70,7 +70,6 @@ target/
 test
 *.json
 login.py
-windows.txt
 !__users.json
 !__template.json
 !__sanis.json
