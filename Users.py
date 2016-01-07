@@ -6,6 +6,9 @@ from main import Main
 
 
 class Users():
+	max_login_attempts = 3  # specifies the max amount of login attempts the user can take before getting blocked
+	login_attempts = 1
+
 	def _init_(self):
 		return True
 
@@ -17,7 +20,7 @@ class Users():
 			data = json.load(jdata)
 			jdata.close()
 
-		if name in data.keys():
+		if name in data['Users']:
 			return data['Users'][name]
 
 	def create(self, name, passwd):
@@ -42,16 +45,28 @@ class Users():
 			name = usrname.get()
 			passwd = usrpasswd.get()
 
-			if self.check(name, passwd) and (login_attempts < max_login_attempts):
-				print("User " + name + " logged in successfully")
-				lroot.destroy()
-				main.show_main()
+			if self.login_attempts < self.max_login_attempts:
+				if self.check(name, passwd):
+					print("User " + name + " logged in successfully")
+					lroot.destroy()
+					main.show_main()
+					print(self.login_attempts)
+				else:
+					self.login_attempts += 1
+					print("User " + name + " cannot be logged in: Wrong username/password")
 			else:
-				print("User " + name + " cannot be logged in: Wrong username/password")
+				print("User " + name + " cannot be logged in: Too much login attempts. Login blocked")
+
+			# if self.check(name, passwd) and (self.login_attempts < max_login_attempts):
+			# 	print("User " + name + " logged in successfully")
+			# 	lroot.destroy()
+			# 	main.show_main()
+			# 	print(self.login_attempts)
+			# 	self.login_attempts += 1
+			# else:
+			# 	print("User " + name + " cannot be logged in: Wrong username/password")
 
 		# declaring variables
-		max_login_attempts = 3  # specifies the max amount of login attempts the user can take before getting blocked
-		login_attempts = 1
 
 		main = Main()
 		main.__init__()
