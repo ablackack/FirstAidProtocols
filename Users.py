@@ -57,15 +57,6 @@ class Users():
 			else:
 				print("User " + name + " cannot be logged in: Too much login attempts. Login blocked")
 
-			# if self.check(name, passwd) and (self.login_attempts < max_login_attempts):
-			# 	print("User " + name + " logged in successfully")
-			# 	lroot.destroy()
-			# 	main.show_main()
-			# 	print(self.login_attempts)
-			# 	self.login_attempts += 1
-			# else:
-			# 	print("User " + name + " cannot be logged in: Wrong username/password")
-
 		# declaring variables
 
 		main = Main()
@@ -106,3 +97,20 @@ class Users():
 		btquit.grid(pady=1, padx=1, row=2, column=1, sticky="W")
 
 		lroot.mainloop()
+
+class ManageUsers():
+	def __init__(self):
+		return True;
+
+	def show_ui(self):
+		usr = Tk()
+		usr.geometry()
+		usr.wm_title("Benutzer verwalten")
+		usr.configure(width=300, height=300)
+
+		# input fields and their labels
+		lbusradd_caption = Label(usr, text="Username:")
+		lbusradd_caption.place(x=2, y=2)
+
+		usradd_name = Entry(usr)
+		usradd_name.place(x=50, y=2)

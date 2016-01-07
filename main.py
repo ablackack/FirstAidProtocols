@@ -2,6 +2,7 @@ from tkinter import *
 from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
+from Users import ManageUsers
 
 
 class Main:
@@ -23,6 +24,10 @@ class Main:
 		# button for managing first responsers
 		btnew_san = Button(root, text="Sanitäter verwalten", command=ManageSan)
 		btnew_san.grid(sticky=W+E, pady=1, padx=1)
+
+		# button for managing users
+		btusers = Button(root, text="Benutzer verwalten", command=ManageUsers)
+		btusers.grid(sticky=W+E, pady=1, padx=1)
 
 		# button for quitiing program
 		btroot_quit = MainQuitButton(root)
