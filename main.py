@@ -2,7 +2,7 @@ from tkinter import *
 from QuitButton import MainQuitButton
 from NewPat import NewPat
 from ManageSan import ManageSan
-from Users import ManageUsers
+from Users import *
 
 
 class Main:
@@ -15,6 +15,10 @@ class Main:
 		root.title = "Schulsanitätsdienst"
 		root.wm_title("Schulsanitätsdienst")
 
+		def open_mgusers_ui():
+			ManageUsers.show_ui()
+			return True;
+
 		# Add buttons to main window
 
 		# button for adding a new patient
@@ -26,7 +30,7 @@ class Main:
 		btnew_san.grid(sticky=W+E, pady=1, padx=1)
 
 		# button for managing users
-		btusers = Button(root, text="Benutzer verwalten", command=ManageUsers)
+		btusers = Button(root, text="Benutzer verwalten", command=open_mgusers_ui)
 		btusers.grid(sticky=W+E, pady=1, padx=1)
 
 		# button for quitiing program

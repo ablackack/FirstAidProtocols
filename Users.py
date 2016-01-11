@@ -41,6 +41,17 @@ class Users():
 			return False
 
 	def show_login_window(self):
+
+		# declaring variables
+
+		main = Main()
+		main.__init__()
+
+		lroot = Tk()
+		lroot.grid()
+		lroot.title = "Login"
+		lroot.wm_title("Login")
+
 		def login():
 			name = usrname.get()
 			passwd = usrpasswd.get()
@@ -56,16 +67,6 @@ class Users():
 					print("User " + name + " cannot be logged in: Wrong username/password")
 			else:
 				print("User " + name + " cannot be logged in: Too much login attempts. Login blocked")
-
-		# declaring variables
-
-		main = Main()
-		main.__init__()
-
-		lroot = Tk()
-		lroot.grid()
-		lroot.title = "Login"
-		lroot.wm_title("Login")
 
 		# Adding elements to window
 
@@ -98,9 +99,10 @@ class Users():
 
 		lroot.mainloop()
 
+
 class ManageUsers():
 	def __init__(self):
-		return True;
+		return True
 
 	def show_ui(self):
 		usr = Tk()
