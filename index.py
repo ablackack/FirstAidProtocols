@@ -1,7 +1,5 @@
 from Users import Users
 
-# testing something
-
 usr = Users()
 usr.__init__()
 
